@@ -1,8 +1,24 @@
 module.exports = function (creep) {   //Module for energy harvesting
 
     if(creep.carry.energy == 0) {
-        creep.moveTo(22, 24);
-        creep.pickup(Game.creeps.Harvester1.pos.lookFor('energy')[0]);
+        if (Memory.fillSpawnerFromStorage) {
+            
+            if (Game.creeps.Harvester1) {
+                creep.moveTo(22, 24);
+                creep.pickup(creep.room.getPositionAt(21,23).lookFor('energy')[0]);
+            }
+            else {
+                creep.moveTo(24, 24);
+                var storage = Game.getObjectById(creep.room.memory.storage);
+                storage.transferEnergy(creep);
+            }
+        }
+        else {
+            creep.moveTo(22, 24);
+            creep.pickup(creep.room.getPositionAt(21,23).lookFor('energy')[0]);      
+        }
+          
+
     }
     else {
         if(Game.spawns.ByAgenT.energy < Game.spawns.ByAgenT.energyCapacity){
@@ -21,8 +37,16 @@ module.exports = function (creep) {   //Module for energy harvesting
                     return true;
                 }
         });
-        creep.moveTo(extension);
-        creep.transferEnergy(extension);
+            if(extension) {
+                creep.moveTo(extension);
+                creep.transferEnergy(extension);    
+            } 
+            else {
+                var storage = Game.getObjectById(creep.room.memory.storage);
+                creep.moveTo(storage);
+                creep.transferEnergy(storage);
+            }
+        
         }
     }
 }

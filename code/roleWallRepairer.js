@@ -1,8 +1,8 @@
 module.exports = function(creep) {
     
     if(creep.carry.energy == 0) {
-        creep.moveTo(Game.spawns.ByAgenT, { reusePath: 15 });
-        Game.spawns.ByAgenT.transferEnergy(creep);
+        creep.moveTo(Game.getObjectById(creep.room.memory.storage), { reusePath: 15 });
+        Game.getObjectById(creep.room.memory.storage).transferEnergy(creep);
         
     }
     else {

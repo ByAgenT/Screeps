@@ -3,8 +3,8 @@ harvest = require('roleHarvester');
 module.exports = function(creep) {
     
     if(creep.carry.energy == 0) {
-        creep.moveTo(Game.spawns.ByAgenT);
-        Game.spawns.ByAgenT.transferEnergy(creep);
+        creep.moveTo(22, 23);
+        creep.pickup(creep.room.getPositionAt(21,23).lookFor('energy')[0]); 
         
     }
     else {

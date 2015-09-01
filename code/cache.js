@@ -16,3 +16,5 @@ cacheManager = {
         currentRoom.memory.walls = currentRoom.find(FIND_STRUCTURES, {filter: { structureType: 'rampart' }});
     },
 }
+
+module.exports = cacheManager;
