@@ -12,7 +12,7 @@ module.exports = function(creep) {
             }
         }
         });
-        creep.moveTo(target, { reusePath: 15 });
+        creep.moveTo(target, { reusePath: 30 });
         creep.repair(target);
     }
 }

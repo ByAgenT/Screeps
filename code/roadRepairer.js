@@ -11,7 +11,7 @@ module.exports = function(creep) {
 		    for(var i = 0; i < targets.length; i++) {
 		        if(targets[i].hits < 10000) {
 		            creep.moveTo(targets[i]);
-			        creep.repair(targets[i]);    
+			        creep.repair(targets[i]);
 		        }
 		    }
 		}

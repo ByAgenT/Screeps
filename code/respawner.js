@@ -46,6 +46,6 @@ module.exports = function() {  //Module for auto-respawning died creeps
     
     // Upgraders
     if(!Game.creeps.ControllerManager1 && SYSTEMS_OK) {
-        Game.spawns.ByAgenT.createCreep([WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE], "ControllerManager1");
+        Game.spawns.ByAgenT.createCreep([WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE], "ControllerManager1");
     }
 }
