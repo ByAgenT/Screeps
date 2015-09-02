@@ -9,7 +9,7 @@ module.exports = function(creep) {
 		var targets = creep.room.find(FIND_STRUCTURES, {filter: { structureType: 'road' }})
 		if(targets.length) {
 		    for(var i = 0; i < targets.length; i++) {
-		        if(targets[i].hits < 10000) {
+		        if(targets[i].hits < Memory.roadHealth) {
 		            creep.moveTo(targets[i]);
 			        creep.repair(targets[i]);
 		        }

@@ -7,7 +7,7 @@ module.exports = function(creep) {
     }
     else {
         var target = creep.pos.findClosest(FIND_STRUCTURES, {filter: function(object) {
-            if (object.structureType == 'constructedWall' && object.hits < 100000) {
+            if (object.structureType == 'constructedWall' && object.hits < Memory.wallHealth) {
                 return true;
             }
         }

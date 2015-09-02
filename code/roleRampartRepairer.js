@@ -8,7 +8,7 @@ module.exports = function(creep) {
 
         var target = creep.pos.findClosest(FIND_STRUCTURES, { 
             filter: function(object) {
-                if (object.structureType == 'rampart' && object.hits < 60000) {
+                if (object.structureType == 'rampart' && object.hits < Memory.rampartHealth) {
                     return true;
                 }
             }
