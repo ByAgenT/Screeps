@@ -8,7 +8,6 @@ wallRepair = require('roleWallRepairer');
 rampartRepair = require('roleRampartRepairer');
 transporting = require('roleTransport');
 roadRepair = require('roleRoadRepairer');
-
 respawn = require('respawner');
 
 respawn();

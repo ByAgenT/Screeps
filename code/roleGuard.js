@@ -1,9 +1,8 @@
-module.exports = function(creep) {  //Module for guarding
+module.exports = function(creep) { //Module for guarding
     var targets = creep.room.find(FIND_HOSTILE_CREEPS);
-    if(targets.length) {
+    if (targets.length) {
         creep.attack(targets[0]);
-    }
-    else {
+    } else {
         creep.moveTo(creep.memory.place.x, creep.memory.place.y);
     }
 }
